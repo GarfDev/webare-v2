@@ -1,5 +1,5 @@
 {
-  "name": "full-node",
+  "name": "@the-node/full-node",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Garfield <garfdev.13@gmail.com>",
@@ -19,10 +19,19 @@
   },
   "scripts": {
     "start:dev": "nodemon",
-    "start": "node lib/index.js",
+    "start": "node dist/index.js",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/GarfDev/the-node/issues"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.3.2",
+    "@grpc/proto-loader": "^0.6.2",
+    "lodash": "^4.17.21",
+    "mali": "^0.41.2"
+  },
+  "devDependencies": {
+    "tsconfig-paths": "^3.9.0"
   }
 }
