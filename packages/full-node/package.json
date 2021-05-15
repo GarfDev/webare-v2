@@ -1,0 +1,28 @@
+{
+  "name": "full-node",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Garfield <garfdev.13@gmail.com>",
+  "homepage": "https://github.com/GarfDev/the-node#readme",
+  "license": "MIT",
+  "main": "lib/full-node.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GarfDev/the-node.git"
+  },
+  "scripts": {
+    "start:dev": "nodemon",
+    "start": "node lib/index.js",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/GarfDev/the-node/issues"
+  }
+}
