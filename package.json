@@ -11,8 +11,5 @@
   },
   "workspaces": [
     "packages/*"
-  ],
-  "dependencies": {
-    "@the-node/full-node": "file:packages/full-node"
-  }
+  ]
 }
