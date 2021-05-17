@@ -1,1 +1,5 @@
-console.log("Hello world");
+function application() {
+  console.log("On construction");
+}
+
+export default application;

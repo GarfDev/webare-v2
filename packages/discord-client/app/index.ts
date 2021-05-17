@@ -1,1 +1,5 @@
-console.log('Welcome to Discord Client')
+function application() {
+  console.log("On construction");
+}
+
+export default application;

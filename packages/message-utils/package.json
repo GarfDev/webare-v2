@@ -1,0 +1,27 @@
+{
+  "name": "@webare/message-utils",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Garfield is on board. <GarfDev.13@gmail.com>",
+  "homepage": "https://github.com/GarfDev/webare-v2#readme",
+  "license": "ISC",
+  "main": "lib/message-utils.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GarfDev/webare-v2.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "BABEL_ENV=build babel src --out-dir dist --source-maps --extensions .ts,.tsx --delete-dir-on-start --config-file ../../babel.config.js --no-comments"
+  },
+  "bugs": {
+    "url": "https://github.com/GarfDev/webare-v2/issues"
+  }
+}

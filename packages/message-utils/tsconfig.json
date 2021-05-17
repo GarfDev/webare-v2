@@ -2,10 +2,10 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "./app",
-    "baseUrl": "./app",
+    "rootDir": "src",
+    "baseUrl": "./",
     "paths": {}
   },
-  "include": ["app/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "**/__tests__/*", "**/__e2e__/*"]
 }
