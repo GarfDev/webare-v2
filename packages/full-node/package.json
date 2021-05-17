@@ -20,7 +20,8 @@
   "scripts": {
     "start:dev": "nodemon",
     "start": "node dist/index.js",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "BABEL_ENV=build babel app --out-dir dist --source-maps --extensions .ts,.tsx --delete-dir-on-start --config-file ../../babel.config.js --no-comments"
   },
   "bugs": {
     "url": "https://github.com/GarfDev/the-node/issues"
