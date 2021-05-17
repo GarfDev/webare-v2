@@ -23,5 +23,8 @@
   },
   "bugs": {
     "url": "https://github.com/GarfDev/webare-v2/issues"
+  },
+  "dependencies": {
+    "dotenv": "^9.0.2"
   }
 }

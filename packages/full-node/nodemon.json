@@ -1,5 +1,5 @@
 {
   "ext": "ts,json",
   "ignore": ["**/*.spec.ts", "**/*.ts"],
-  "exec": "ts-node -r tsconfig-paths/register ./lib/index.ts"
+  "exec": "ts-node -r tsconfig-paths/register ./app/index.ts"
 }

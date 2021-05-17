@@ -2,6 +2,7 @@ module.exports = (api) => {
   api.cache(true);
 
   return {
+    sourceMaps: false,
     presets: [
       [
         "@babel/env",
@@ -32,6 +33,7 @@ module.exports = (api) => {
         ],
       },
     },
+
     ignore: ["node_modules"],
   };
 };

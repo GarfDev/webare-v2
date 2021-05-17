@@ -1,5 +1,13 @@
+import dotenv from "dotenv";
+import { getClient } from "utils/discord";
+
+dotenv.config();
+
 function application() {
-  console.log("On construction");
+  const client = getClient();
+  client.login(process.env.TOKEN || "");
 }
+
+application();
 
 export default application;
