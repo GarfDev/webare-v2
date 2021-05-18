@@ -5,7 +5,8 @@
   "author": "Garfield is on board. <GarfDev.13@gmail.com>",
   "homepage": "https://github.com/GarfDev/webare-v2#readme",
   "license": "ISC",
-  "main": "lib/message-utils.js",
+  "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -18,10 +19,11 @@
     "url": "git+https://github.com/GarfDev/webare-v2.git"
   },
   "scripts": {
-    "tsc": "tsc --emitDeclarationOnly --project tsconfig.build.json",
     "lint": "eslint --debug src/**/*.ts",
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "yarn tsc && BABEL_ENV=build babel src --out-dir lib --source-maps --extensions .ts,.tsx --delete-dir-on-start --config-file ../../babel.config.js --no-comments"
+    "build:type": "tsc --emitDeclarationOnly --project tsconfig.build.json",
+    "build:js": "babel src --out-dir lib --source-maps --extensions .ts,.tsx --delete-dir-on-start --config-file ../../babel.config.js --no-comments",
+    "build": "BABEL_ENV=build yarn build:js && yarn build:type"
   },
   "bugs": {
     "url": "https://github.com/GarfDev/webare-v2/issues"

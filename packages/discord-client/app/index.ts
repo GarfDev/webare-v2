@@ -1,14 +1,14 @@
-import dotenv from "dotenv";
-import { getClient } from "utils/discord";
+import dotenv from 'dotenv';
+import { getClient } from 'utils/discord';
 
 dotenv.config();
 
-function application() {
+async function application(): Promise<void> {
   const client = getClient();
-  client.login(process.env.TOKEN || "");
-} 
+  client.login(process.env.TOKEN || '');
+}
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === 'development') {
   application();
 }
 

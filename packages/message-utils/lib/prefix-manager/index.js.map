@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","sourcesContent":[],"file":"index.js"}
+{"version":3,"sources":["../../src/prefix-manager/index.ts"],"names":["PrefixManager","get","getter","set","setter"],"mappings":";;;;;;;AAAA;;AAEA,MAAMA,aAAa,GAAG;AACpBC,EAAAA,GAAG,EAAEC,aADe;AAEpBC,EAAAA,GAAG,EAAEC;AAFe,CAAtB;eAKeJ,a","sourcesContent":["import { getter, setter } from './store';\n\nconst PrefixManager = {\n  get: getter,\n  set: setter,\n};\n\nexport default PrefixManager;\n"],"file":"index.js"}
