@@ -4,8 +4,21 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean": "lerna run --parallel clean",
+    "dev": "lerna run start --stream --parallel",
+    "format": "yarn prettier --write",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(ts|tsx|json)\"",
     "build": "lerna exec --parallel 'BABEL_ENV=build babel src --out-dir dist --source-maps --extensions .ts,.tsx --config-file ../../babel.config.js --delete-dir-on-start --no-comments'",
     "release": "lerna publish"
+  },
+  "lint-staged": {
+    "packages/**/*.{ts,js,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && yarn lint"
+    }
   },
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"
@@ -27,6 +40,7 @@
     "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^6.0.0",
     "lerna": "^4.0.0",
     "prettier": "^2.3.0",
     "typescript": "^4.2.4"
