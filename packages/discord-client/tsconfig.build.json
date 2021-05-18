@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.build.json",
 
   "compilerOptions": {
+    "composite": true,
     "outDir": "dist",
     "rootDir": "app",
     "baseUrl": "app",

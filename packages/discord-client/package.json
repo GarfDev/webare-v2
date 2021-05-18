@@ -5,13 +5,14 @@
   "author": "Garfield is on board. <GarfDev.13@gmail.com>",
   "homepage": "https://github.com/GarfDev/webare-v2#readme",
   "license": "MIT",
-  "main": "lib/discord-client.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
-    "lib": "lib",
+    "dist": "dist",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "repository": {
     "type": "git",

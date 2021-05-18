@@ -1,9 +1,9 @@
 {
-  "name": "webare",
+  "name": "webare-v2",
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "clean": "lerna run --parallel clean",
+    "bootstrap": "lerna bootstrap && yarn build",
+    "build": "lerna run --parallel build",
     "dev": "lerna run start --stream --parallel",
     "format": "yarn prettier --write",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(ts|tsx|json)\"",

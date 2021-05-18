@@ -19,4 +19,7 @@ module.exports = {
     warnOnUnsupportedTypeScriptVersion: false,
     EXPERIMENTAL_useSourceOfProjectReferenceRedirect: true,
   },
+  rules: {
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+  },
 };
