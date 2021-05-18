@@ -1,0 +1,42 @@
+{
+  "name": "@webare/discord-worker",
+  "version": "0.2.0",
+  "description": "> TODO: description",
+  "author": "Garfield is on board. <GarfDev.13@gmail.com>",
+  "homepage": "https://github.com/GarfDev/webare-v2#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "dist": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GarfDev/webare-v2.git"
+  },
+  "scripts": {
+    "start:dev": "nodemon",
+    "lint": "eslint --debug app/**/*.ts",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "clean": "rm -rf ./dist && rm -rf tsconfig.build.tsbuildinfo",
+    "build:type": "tsc --emitDeclarationOnly --project tsconfig.build.json",
+    "build:js": "babel app --out-dir dist --source-maps --extensions .ts,.tsx --config-file ../../babel.config.js --no-comments",
+    "build": "yarn clean && BABEL_ENV=build yarn build:js && yarn build:type"
+  },
+  "bugs": {
+    "url": "https://github.com/GarfDev/webare-v2/issues"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^9.0.2",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.10"
+  }
+}

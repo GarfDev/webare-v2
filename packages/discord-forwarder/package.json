@@ -1,5 +1,5 @@
 {
-  "name": "@webare/discord-client",
+  "name": "@webare/discord-forwarder",
   "version": "0.2.0",
   "description": "> TODO: description",
   "author": "Garfield is on board. <GarfDev.13@gmail.com>",
@@ -33,6 +33,10 @@
   },
   "dependencies": {
     "discord.js": "^12.5.3",
-    "dotenv": "^9.0.2"
+    "dotenv": "^9.0.2",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.10"
   }
 }
