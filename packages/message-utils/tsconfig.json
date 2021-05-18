@@ -6,6 +6,6 @@
     "baseUrl": "./",
     "paths": {}
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "**/__tests__/*", "**/__e2e__/*"]
 }

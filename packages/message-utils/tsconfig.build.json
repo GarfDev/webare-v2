@@ -2,7 +2,11 @@
   "extends": "../../tsconfig.build.json",
 
   "compilerOptions": {
-    "baseUrl": "./packages",
+    "outDir": "lib",
+    "rootDir": "src",
+    "baseUrl": "./src",
     "paths": {}
-  }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/*", "**/__e2e__/*"]
 }

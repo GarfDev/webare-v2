@@ -18,9 +18,10 @@
     "url": "git+https://github.com/GarfDev/webare-v2.git"
   },
   "scripts": {
+    "tsc": "tsc --emitDeclarationOnly --project tsconfig.build.json",
     "lint": "eslint --debug src/**/*.ts",
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "BABEL_ENV=build babel src --out-dir dist --source-maps --extensions .ts,.tsx --delete-dir-on-start --config-file ../../babel.config.js --no-comments"
+    "build": "yarn tsc && BABEL_ENV=build babel src --out-dir lib --source-maps --extensions .ts,.tsx --delete-dir-on-start --config-file ../../babel.config.js --no-comments"
   },
   "bugs": {
     "url": "https://github.com/GarfDev/webare-v2/issues"
