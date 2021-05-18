@@ -22,7 +22,10 @@
     "start": "node dist/index.js",
     "lint": "eslint --debug app/**/*.ts",
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "BABEL_ENV=build babel app --out-dir dist --source-maps --extensions .ts,.tsx --delete-dir-on-start --config-file ./babel.config.js --no-comments"
+    "clean": "rm -rf ./dist && rm -rf tsconfig.build.tsbuildinfo",
+    "build:type": "tsc --emitDeclarationOnly --project tsconfig.build.json",
+    "build:js": "babel app --out-dir dist --source-maps --extensions .ts,.tsx --config-file ../../babel.config.js --no-comments",
+    "build": "yarn clean && BABEL_ENV=build yarn build:js && yarn build:type"
   },
   "bugs": {
     "url": "https://github.com/GarfDev/the-node/issues"

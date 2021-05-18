@@ -20,10 +20,11 @@
   },
   "scripts": {
     "lint": "eslint --debug src/**/*.ts",
+    "clean": "rm -rf ./lib && rm -rf tsconfig.build.tsbuildinfo",
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build:type": "tsc --emitDeclarationOnly --project tsconfig.build.json",
-    "build:js": "babel src --out-dir lib --source-maps --extensions .ts,.tsx --delete-dir-on-start --config-file ../../babel.config.js --no-comments",
-    "build": "BABEL_ENV=build yarn build:js && yarn build:type"
+    "build:js": "babel src --out-dir lib --source-maps --extensions .ts,.tsx --config-file ../../babel.config.js --no-comments",
+    "build": "yarn clean && BABEL_ENV=build yarn build:js && yarn build:type"
   },
   "bugs": {
     "url": "https://github.com/GarfDev/webare-v2/issues"

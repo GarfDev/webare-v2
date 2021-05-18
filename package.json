@@ -7,13 +7,7 @@
     "dev": "lerna run start --stream --parallel",
     "format": "yarn prettier --write",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(ts|tsx|json)\"",
-    "build": "lerna exec --parallel 'BABEL_ENV=build babel src --out-dir dist --source-maps --extensions .ts,.tsx --config-file ../../babel.config.js --delete-dir-on-start --no-comments'",
     "release": "lerna publish"
-  },
-  "lint-staged": {
-    "packages/**/*.{ts,js,json,md}": [
-      "prettier --write"
-    ]
   },
   "husky": {
     "hooks": {
