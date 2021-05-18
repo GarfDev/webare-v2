@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start:dev": "nodemon",
+    "lint": "eslint --debug app/**/*.ts",
     "start": "node dist/index.js",
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "BABEL_ENV=build babel app --out-dir dist --source-maps --extensions .ts,.tsx --delete-dir-on-start --config-file ./babel.config.js --no-comments"

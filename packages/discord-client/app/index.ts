@@ -6,8 +6,10 @@ dotenv.config();
 function application() {
   const client = getClient();
   client.login(process.env.TOKEN || "");
-}
+} 
 
-application();
+if (process.env.NODE_ENV === "development") {
+  application();
+}
 
 export default application;
