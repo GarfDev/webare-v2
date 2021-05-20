@@ -4,7 +4,9 @@ export interface ParserProps {
 }
 
 const parser = ({ content, prefix }: ParserProps) => {
-  return content.toLowerCase().replace(prefix, '').trim().split(' ');
+  const parsedContent = content.toLowerCase().replace(prefix, '').trim();
+  if (!parsedContent) return [];
+  return parsedContent.split(' ');
 };
 
 export default parser;
