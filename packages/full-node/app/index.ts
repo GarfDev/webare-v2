@@ -1,5 +1,6 @@
 function application() {
-  console.log("On construction");
+  console.log('On construction');
 }
 
+application();
 export default application;

@@ -1,5 +1,5 @@
 {
-  "name": "@webare/discord-forwarder",
+  "name": "@webare/discord-client",
   "version": "0.2.0",
   "description": "> TODO: description",
   "author": "Garfield is on board. <GarfDev.13@gmail.com>",
@@ -32,6 +32,7 @@
     "url": "https://github.com/GarfDev/webare-v2/issues"
   },
   "dependencies": {
+    "bullmq": "^1.26.3",
     "discord.js": "^12.5.3",
     "dotenv": "^9.0.2",
     "node-fetch": "^2.6.1"

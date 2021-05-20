@@ -1,5 +1,7 @@
 import dotenv from 'dotenv';
+import { JobJson } from 'bullmq';
 import { getClient } from 'utils/discord';
+import Worker from 'utils/worker';
 
 import onReady from 'listeners/ready';
 import onMessage from 'listeners/message';
@@ -12,11 +14,13 @@ async function application(): Promise<void> {
   client.on('ready', onReady);
   client.on('message', onMessage);
 
+  Worker.init(async arg => {
+    const job = arg as JobJson;
+    console.log(job.data);
+  });
+
   client.login(process.env.TOKEN || '');
 }
 
-if (process.env.NODE_ENV === 'development') {
-  application();
-}
-
+application();
 export default application;
