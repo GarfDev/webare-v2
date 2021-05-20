@@ -9,11 +9,12 @@ dotenv.config();
 function application() {
   const app = express();
 
-  Queuer.init();
   mongoose.connect(process.env.MONGO_URL || '', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
+
+  Queuer.init();
 
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());

@@ -11,7 +11,6 @@ const onMessage = async (message: Message) => {
   const isFromSelf = message.author.id === client.user?.id;
   const isCommand = message.content.startsWith(prefix);
   const isFromDM = !message.guild;
-
   if (isFromBot || isFromSelf) return;
   if (!isCommand && !isFromDM) return;
   const parts = isCommand ? parser({ prefix, content: message.content }) : [];
@@ -25,7 +24,8 @@ const onMessage = async (message: Message) => {
     direct: isFromDM,
     attachments: attachments,
     created_at: message.createdTimestamp,
-    author_id: `${message.author.id}`,
+    author_id: message.author.id,
+    channel_id: message.channel.id,
     content: message.content,
     platform: 'discord',
     parts: parts,

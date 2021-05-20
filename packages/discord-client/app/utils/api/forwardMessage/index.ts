@@ -1,5 +1,5 @@
 import fetch, { FetchError } from 'node-fetch';
-import { StandardizedMessage } from './types';
+import { StandardizedMessage } from '@webare/message-utils';
 import { RequestError } from '../constants';
 import { Response } from '../types';
 

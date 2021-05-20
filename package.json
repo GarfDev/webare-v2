@@ -3,8 +3,11 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap && yarn build",
-    "build": "lerna run --parallel build",
-    "dev": "lerna run start --stream --parallel",
+    "build:deps": "lerna run build --scope @webare/message-utils",
+    "build": "yarn build:deps && lerna run build --ignore @webare/message-utils",
+    "dev": "lerna run start:dev --stream",
+    "dev:full-node": "lerna run start:dev --scope @webare/full-node",
+    "dev:discord-client": "lerna run start:dev --scope @webare/discord-client",
     "format": "yarn prettier --write",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(ts|tsx|json)\"",
     "release": "lerna publish"
