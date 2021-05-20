@@ -32,6 +32,7 @@
     "url": "https://github.com/GarfDev/the-node/issues"
   },
   "dependencies": {
+    "bullmq": "^1.26.4",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "lodash": "^4.17.21",
