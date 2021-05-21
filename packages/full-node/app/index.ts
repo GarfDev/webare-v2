@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import message from './resources/messages';
 import Queuer from 'utils/Queuer';
+import Command from 'utils/Command';
 
 dotenv.config();
 function application() {
@@ -15,6 +16,7 @@ function application() {
   });
 
   Queuer.init();
+  Command.init();
 
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
