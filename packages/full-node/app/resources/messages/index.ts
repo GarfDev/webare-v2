@@ -1,3 +1,4 @@
+import { User } from 'models';
 import { Request, Response } from 'express';
 import { StandardizedMessage, Message } from '@webare/message-utils';
 import { standardizedMessageSchema } from './constants';
@@ -8,16 +9,22 @@ const messages = async (req: Request, res: Response) => {
   const valid = await standardizedMessageSchema.isValid(req.body);
   const payload: StandardizedMessage = req.body;
   if (!valid) return res.status(404).send({});
+  await User.findOne(
+    {
+      uuid: payload.author_id,
+      platform: payload.platform,
+    },
+    { upsert: true },
+  );
   const queuer = Queuer.get();
 
   if (payload.parts.length) {
-    const flattenedPart = payload.parts.join('/');
-    const command = Command.get(flattenedPart);
-    if (!command) return res.status(404).send({});
+    const result = Command.get(payload.parts);
+    if (!result) return res.status(404).send({});
     const response: Message = {
       direct: payload.direct,
       receiver: payload.direct ? payload.author_id : payload.channel_id,
-      content: (await command.handler(payload)) || '',
+      content: (await result[0].handler(payload, result[1])) || '',
       attachments: payload.attachments,
     };
     queuer.add(payload.platform, response);

@@ -2,7 +2,17 @@ import { Command } from './types';
 
 const store: { [path: string]: Command } = {};
 
-const getter = (path: string): Command | undefined => store[path];
+const getter = (
+  parts: string[],
+  params: string[] = [],
+): [Command, string[]] | undefined => {
+  if (!parts.length) return undefined;
+  const command = store[parts.join('/')];
+  if (command) return [command, params];
+  const newParam = parts.pop();
+  const nextParams = newParam ? [newParam, ...params] : params;
+  return getter(parts, nextParams);
+};
 
 const register = (path: string, command: Command) => {
   store[path] = command;

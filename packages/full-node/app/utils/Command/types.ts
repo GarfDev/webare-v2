@@ -5,6 +5,7 @@ export interface Command {
   cooldown: number;
   handler: (
     message: StandardizedMessage,
+    params: string[],
   ) => Promise<string | void | undefined | null>;
   helpMessage: string;
   usageMessage: string;
