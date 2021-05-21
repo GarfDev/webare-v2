@@ -1,7 +1,8 @@
-import { init } from './store';
+import { getter, register } from './store';
 
 const Command = {
-  init,
+  get: getter,
+  register: register,
 };
 
 export default Command;

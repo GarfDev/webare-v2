@@ -1,13 +1,11 @@
-import getStaticPath from 'utils/getStaticPath';
-import readDir from 'utils/readDir';
-// import { Command } from './types';
+import { Command } from './types';
 
-// const commandStore: { [key: string]: Command } = {};
+const store: { [path: string]: Command } = {};
 
-const init = () => {
-  const loadPath = getStaticPath('commands');
-  const paths = readDir(loadPath);
-  console.log(paths);
+const getter = (path: string): Command | undefined => store[path];
+
+const register = (path: string, command: Command) => {
+  store[path] = command;
 };
 
-export { init };
+export { register, getter };
